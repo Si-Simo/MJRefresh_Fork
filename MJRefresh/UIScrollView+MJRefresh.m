@@ -9,6 +9,7 @@
 #import "UIScrollView+MJRefresh.h"
 #import "MJRefreshHeader.h"
 #import "MJRefreshFooter.h"
+#import "MJRefreshLeader.h"
 #import "MJRefreshTrailer.h"
 #import <objc/runtime.h>
 
@@ -57,7 +58,26 @@ static const char MJRefreshFooterKey = '\0';
     return objc_getAssociatedObject(self, &MJRefreshFooterKey);
 }
 
-#pragma mark - footer
+#pragma mark - leader
+static const char MJRefreshLeaderKey = '\0';
+- (void)setMj_leader:(MJRefreshLeader *)mj_leader {
+    if (mj_leader != self.mj_leader) {
+        // 删除旧的，添加新的
+        [self.mj_leader removeFromSuperview];
+        if (mj_leader) {
+            [self insertSubview:mj_leader atIndex:0];
+        }
+        // 存储新的
+        objc_setAssociatedObject(self, &MJRefreshLeaderKey,
+                                 mj_leader, OBJC_ASSOCIATION_RETAIN);
+    }
+}
+
+- (MJRefreshLeader *)mj_leader {
+    return objc_getAssociatedObject(self, &MJRefreshLeaderKey);
+}
+
+#pragma mark - trailer
 static const char MJRefreshTrailerKey = '\0';
 - (void)setMj_trailer:(MJRefreshTrailer *)mj_trailer {
     if (mj_trailer != self.mj_trailer) {

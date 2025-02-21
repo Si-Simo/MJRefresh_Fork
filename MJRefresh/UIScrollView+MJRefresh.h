@@ -13,7 +13,7 @@
 #import "MJRefreshConst.h"
 #endif
 
-@class MJRefreshHeader, MJRefreshFooter, MJRefreshTrailer;
+@class MJRefreshHeader, MJRefreshFooter, MJRefreshTrailer, MJRefreshLeader;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) MJRefreshFooter *mj_footer;
 @property (strong, nonatomic, nullable) MJRefreshFooter *footer MJRefreshDeprecated("使用mj_footer");
 
+/** 右滑刷新控件 */
+@property (strong, nonatomic, nullable) MJRefreshLeader *mj_leader;
 /** 左滑刷新控件 */
 @property (strong, nonatomic, nullable) MJRefreshTrailer *mj_trailer;
 

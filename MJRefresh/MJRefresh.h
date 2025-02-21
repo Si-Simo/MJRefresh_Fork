@@ -19,6 +19,7 @@ FOUNDATION_EXPORT const unsigned char MJRefreshVersionString[];
 #import <MJRefresh/MJRefreshAutoGifFooter.h>
 
 #import <MJRefresh/MJRefreshNormalTrailer.h>
+#import <MJRefresh/MJRefreshNormalLeader.h>
 #import <MJRefresh/MJRefreshConfig.h>
 #import <MJRefresh/NSBundle+MJRefresh.h>
 #import <MJRefresh/MJRefreshConst.h>
@@ -36,6 +37,7 @@ FOUNDATION_EXPORT const unsigned char MJRefreshVersionString[];
 #import "MJRefreshAutoGifFooter.h"
 
 #import "MJRefreshNormalTrailer.h"
+#import "MJRefreshNormalLeader.h"
 #import "MJRefreshConfig.h"
 #import "NSBundle+MJRefresh.h"
 #import "MJRefreshConst.h"

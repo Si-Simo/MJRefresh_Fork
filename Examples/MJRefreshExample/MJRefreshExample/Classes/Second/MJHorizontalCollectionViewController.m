@@ -27,7 +27,13 @@
 
 - (void)example42 {
     __weak __typeof(self) weakSelf = self;
-    
+    MJRefreshNormalLeader *leader = [MJRefreshNormalLeader leaderWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.collectionView.mj_leader endRefreshing];
+        });
+    }];
+    leader.ignoredScrollViewContentInsetLeft = 20;
+    self.collectionView.mj_leader = leader;
     // 左拉刷新
     self.collectionView.mj_trailer = [MJRefreshNormalTrailer trailerWithRefreshingBlock:^{
         MJTestViewController *test = [[MJTestViewController alloc] init];
