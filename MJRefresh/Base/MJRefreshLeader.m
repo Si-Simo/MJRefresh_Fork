@@ -28,14 +28,12 @@ NSString * const MJRefreshLeaderRefreshingBoundsKey = @"MJRefreshLeaderRefreshin
 + (instancetype)leaderWithRefreshingBlock:(MJRefreshComponentAction)refreshingBlock {
     MJRefreshLeader *cmp = [[self alloc] init];
     cmp.refreshingBlock = refreshingBlock;
-    cmp.backgroundColor = [UIColor redColor];
     return cmp;
 }
 
 + (instancetype)leaderWithRefreshingTarget:(id)target refreshingAction:(SEL)action {
     MJRefreshLeader *cmp = [[self alloc] init];
     [cmp setRefreshingTarget:target refreshingAction:action];
-    cmp.backgroundColor = [UIColor redColor];
     return cmp;
 }
 

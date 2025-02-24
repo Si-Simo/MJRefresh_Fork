@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
     s.name         = 'MJRefresh_Fork'
-    s.version      = '3.7.9100'
+    # 格式是MJ版本号拼接自身的版本号  (MJ版本号a.b.c + 自身版本号d.e.f = a.b.cdef)
+    s.version      = '3.7.9101'
     s.summary      = 'Fork from MJRefresh'
     s.homepage     = 'https://github.com/Si-Simo/MJRefresh_Fork'
     s.license      = 'MIT'
